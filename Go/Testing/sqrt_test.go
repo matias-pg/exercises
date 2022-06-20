@@ -1,24 +1,18 @@
+// check out the history of this file for a raw test
+
 package main
 
 import (
 	"fmt"
 	"testing"
-)
 
-func almostEqual(v1, v2 float64) bool {
-	return Abs(v1-v2) <= 0.001
-}
+	"github.com/stretchr/testify/require"
+)
 
 func TestSimple(t *testing.T) {
 	val, err := Sqrt(2)
-
-	if err != nil {
-		t.Fatalf("error in calculation - %s", err)
-	}
-
-	if !almostEqual(val, 1.414214) {
-		t.Fatalf("bad value - %f", val)
-	}
+	require.NoError(t, err)
+	require.InDelta(t, 1.414214, val, 0.001)
 }
 
 type testCase struct {
@@ -36,13 +30,8 @@ func TestMany(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(fmt.Sprintf("%f", tc.value), func(t *testing.T) {
 			res, err := Sqrt(tc.value)
-			if err != nil {
-				t.Fatalf("error in calculation - %s", err)
-			}
-
-			if !almostEqual(res, tc.expected) {
-				t.Fatalf("%f != %f", res, tc.expected)
-			}
+			require.NoError(t, err)
+			require.InDelta(t, tc.expected, res, 0.001)
 		})
 	}
 }
