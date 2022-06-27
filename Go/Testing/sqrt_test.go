@@ -1,4 +1,4 @@
-// check the history of this file for other versions of this same test
+// check out the history of this file for other versions of this same test
 
 package main
 
