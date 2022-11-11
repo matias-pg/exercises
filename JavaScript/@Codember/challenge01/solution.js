@@ -24,7 +24,7 @@ async function getUsers() {
       // Parse the properties into key-value pairs
       .map((user) => user.map((prop) => prop.split(":")))
       // Create an object containing all key-value pairs
-      .map((user) => Object.fromEntries(user))
+      .map(Object.fromEntries)
   );
 }
 
