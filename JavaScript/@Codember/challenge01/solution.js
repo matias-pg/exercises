@@ -20,7 +20,7 @@ async function getUsers() {
       // Each user is separated by an empty line
       .split("\n\n")
       // Get all properties of each user
-      .map((user) => user.split(/\s/).filter(Boolean).flat())
+      .map((user) => user.split(/\s/).filter(Boolean))
       // Parse the properties into key-value pairs
       .map((user) => user.map((prop) => prop.split(":")))
       // Create an object containing all key-value pairs
