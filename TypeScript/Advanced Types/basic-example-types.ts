@@ -1,3 +1,5 @@
+// For the exercises see the other files
+
 export type Metadata = {
   page: 1;
   totalPages: 10;
