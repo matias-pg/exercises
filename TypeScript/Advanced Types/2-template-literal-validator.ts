@@ -1,6 +1,7 @@
-import { RawBlocks, metadata } from "./basic-example-types";
+import { RawBlocks, metadata } from "./example-types";
 
-export type HasBlocks<T> = keyof T extends `block${number}`
+// Validates that all field names start with `block`
+export type HasBlocks<T> = keyof T extends `block${string | number}`
   ? T
   : { "The block names must start with `block`.": never };
 

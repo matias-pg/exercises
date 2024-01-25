@@ -1,10 +1,10 @@
-// For the exercises see the other files
+// For the exercises check the other files
 
 export type Metadata = {
-  page: 1;
-  totalPages: 10;
-  resultsCurrentPage: 10;
-  totalResults: 100;
+  page: number;
+  totalPages: number;
+  resultsCurrentPage: number;
+  totalResults: number;
 };
 
 export type Block1 = {

@@ -1,5 +1,6 @@
-import { Metadata, RawBlocks, metadata } from "./basic-example-types";
+import { Metadata, RawBlocks, metadata } from "./example-types";
 
+// Validates that all object values are objects that have a `metadata` field
 export type HasMetadata<T> = T[keyof T] extends { metadata?: Metadata }
   ? T
   : { "The values must have a `metadata` field.": never };
